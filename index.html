@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Sorry Moti ❤️</title>
+
+  <!-- Meta tags for SEO & Social Preview -->
+  <meta name="description" content="A sincere, loving apology from Bhaiyoo to Moti. Maaf karde na please! 🥺❤️">
+  <meta name="theme-color" content="#ffe3ec">
+  <meta property="og:title" content="Sorry Moti ❤️">
+  <meta property="og:description" content="A little message from your Bhaiyoo... 🥺❤️">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon (SVG Heart) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Ambient Floating Canvas -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Background Decorative Glowing Orbs -->
+  <div class="ambient-glow orb-top" aria-hidden="true"></div>
+  <div class="ambient-glow orb-bottom" aria-hidden="true"></div>
+  <div class="ambient-glow orb-center" aria-hidden="true"></div>
+
+  <!-- Top Utilities Bar -->
+  <header class="top-nav">
+    <div class="sound-pill" id="soundToggle" title="Toggle audio effects" role="button" tabindex="0" aria-label="Toggle Sound">
+      <span class="sound-icon" id="soundIcon">🔔</span>
+      <span class="sound-label">Sound FX</span>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="page-wrapper">
+    <div class="card-perspective">
+
+      <!-- ====================================================================
+           STAGE 1: OPENING TEASER SCREEN
+           ==================================================================== -->
+      <article class="apology-card screen-active" id="openingScreen">
+        <!-- Animated Heart Badge -->
+        <div class="heart-badge-wrapper">
+          <div class="heart-glow-ring"></div>
+          <div class="heart-badge" id="heartBadge1" aria-label="Beating Heart">
+            <svg class="heart-svg" viewBox="0 0 32 29.6" fill="currentColor">
+              <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+              c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+            </svg>
+            <span class="heart-sparkle s-1">✨</span>
+            <span class="heart-sparkle s-2">🌸</span>
+            <span class="heart-sparkle s-3">✨</span>
+          </div>
+        </div>
+
+        <header class="card-header">
+          <h1 class="main-heading">Sorry Moti... <span class="emoji-pair">🥺❤️</span></h1>
+          <p class="sub-heading">A little message from your Bhaiyoo...</p>
+          <div class="decorative-divider" aria-hidden="true">
+            <span class="divider-line"></span>
+            <span class="divider-heart">💌</span>
+            <span class="divider-line"></span>
+          </div>
+        </header>
+
+        <div class="letter-content intro-content">
+          <div class="opening-message-box">
+            <p class="opening-lead">
+              Sorry from Bhaiyoo to Moti...
+            </p>
+            <p class="opening-plea">
+              Plz sorry na Moti... 🥺❤️
+            </p>
+            <p class="opening-sub">
+              Maine tumhare liye dil se ek chhota sa message likha hai... Laikin pehle bas itna bata do:
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Choice Buttons -->
+        <div class="action-wrapper">
+          <div class="buttons-row">
+            <!-- Primary Maaf Kiya Button -->
+            <button type="button" class="btn-primary" id="openForgiveBtn" aria-label="Maaf Kiya?">
+              <span class="btn-shimmer" aria-hidden="true"></span>
+              <span class="btn-content">
+                <span class="btn-text">Maaf Kiya?</span>
+                <span class="btn-emojis">🥺❤️</span>
+              </span>
+            </button>
+
+            <!-- Abhi Nahi Button -->
+            <button type="button" class="btn-secondary" id="openTeaseBtn" aria-label="Abhi nahi">
+              <span class="btn-content">
+                <span class="btn-text">Abhi nahi 😤</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- ====================================================================
+           STAGE 2: SAD FACE SCREEN (Shown if she clicks "Abhi nahi 😤")
+           ==================================================================== -->
+      <article class="apology-card screen-hidden" id="sadScreen">
+        <div class="sad-badge-wrapper">
+          <div class="sad-emoji-icon">😭💔</div>
+        </div>
+
+        <header class="card-header">
+          <h2 class="main-heading sad-heading">Bhaiyoo is crying in the corner... 😭</h2>
+          <p class="sub-heading">Dil toot gaya bhaiyoo ka... 💔</p>
+        </header>
+
+        <div class="letter-content sad-content">
+          <div class="sad-message-box">
+            <p class="sad-lead">
+              Aise mat karo na Moti... 🥺
+            </p>
+            <p class="sad-plea">
+              Bhaiyoo sach me bohot sharminda hai aur tumhara bura kabhi nahi chahta...
+            </p>
+            <p class="sad-question">
+              Sach me apne bhaiyoo ko maaf nahi karogi? 😭💔
+            </p>
+          </div>
+        </div>
+
+        <div class="action-wrapper">
+          <div class="buttons-row">
+            <!-- Forgive After Sad -->
+            <button type="button" class="btn-primary" id="sadForgiveBtn" aria-label="Chalo Maaf Kiya">
+              <span class="btn-shimmer" aria-hidden="true"></span>
+              <span class="btn-content">
+                <span class="btn-text">Chalo Maaf Kiya</span>
+                <span class="btn-emojis">🥺❤️</span>
+              </span>
+            </button>
+
+            <!-- Playful Extra Pleading Button -->
+            <button type="button" class="btn-secondary btn-plead-more" id="pleadMoreBtn" aria-label="Thoda aur manao">
+              <span class="btn-content">
+                <span class="btn-text" id="pleadMoreText">Thoda aur manao 🙈</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="pleading-tooltip" id="sadTooltip" aria-live="polite">
+            Please na Moti maan jao! 🥺
+          </div>
+        </div>
+      </article>
+
+
+      <!-- ====================================================================
+           STAGE 3: MAIN EMOTIONAL APOLOGY LETTER
+           ==================================================================== -->
+      <article class="apology-card screen-hidden" id="mainLetterScreen">
+        <!-- Animated Heart Badge -->
+        <div class="heart-badge-wrapper">
+          <div class="heart-glow-ring"></div>
+          <div class="heart-badge" id="heartBadge2" aria-label="Beating Heart">
+            <svg class="heart-svg" viewBox="0 0 32 29.6" fill="currentColor">
+              <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+              c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+            </svg>
+            <span class="heart-sparkle s-1">✨</span>
+            <span class="heart-sparkle s-2">🌸</span>
+            <span class="heart-sparkle s-3">✨</span>
+          </div>
+        </div>
+
+        <header class="card-header">
+          <h1 class="main-heading">Sorry Moti... <span class="emoji-pair">🥺❤️</span></h1>
+          <p class="sub-heading">A little message from your Bhaiyoo...</p>
+          <div class="decorative-divider" aria-hidden="true">
+            <span class="divider-line"></span>
+            <span class="divider-heart">💌</span>
+            <span class="divider-line"></span>
+          </div>
+        </header>
+
+        <!-- Full Apology Letter -->
+        <div class="letter-content" id="letterBody">
+          <p class="letter-para">
+            Moti, I know ke mai tumhe hurt kar deta hoon, laikin mera yaqeen karo, mai kabhi tumhara bura nahi chahta.
+          </p>
+          
+          <p class="letter-para">
+            Kabhi kabhi ghalti se tumhe hurt kar deta hoon, aur mujhe baad mein realize hota hai ke mujhe aisa nahi karna chahiye tha.
+          </p>
+          
+          <div class="highlight-quote">
+            <p class="quote-text">
+              Please apne bhaiyoo ko maaf karde. <span class="quote-emoji">🥺</span>
+            </p>
+            <p class="quote-subtext">
+              I'm really, really sorry. <span class="quote-emoji">❤️</span>
+            </p>
+          </div>
+
+          <p class="letter-para sister-love-note">
+            Tum meri bohot achi bhen ho or bohot achi dost ho. 🌸💕
+          </p>
+          
+          <p class="letter-para promise-line">
+            Ainda ke baad aisa nahi karunga.
+          </p>
+          
+          <p class="letter-para emotional-plea">
+            Aur agar kabhi dobara ghalti krdoon, to chamat maar dena 😂, gaali dedena, daant dena... laikin naraz nhi hona motu. ❤️
+          </p>
+
+          <footer class="letter-signature">
+            <span class="signature-line">— Tumhara Bhaiyoo ❤️</span>
+          </footer>
+        </div>
+
+        <!-- Proceed to Celebration / Gifts Button -->
+        <div class="action-wrapper">
+          <button type="button" class="btn-primary btn-proceed" id="proceedCelebrationBtn" aria-label="Aage Dekho">
+            <span class="btn-shimmer" aria-hidden="true"></span>
+            <span class="btn-content">
+              <span class="btn-text">Bhaiyoo ka Surprise Treat Dekho</span>
+              <span class="btn-emojis">🎁✨</span>
+            </span>
+          </button>
+        </div>
+      </article>
+
+
+      <!-- ====================================================================
+           STAGE 4: SUCCESS CELEBRATION & PEACE TREATY CARD
+           ==================================================================== -->
+      <article class="success-card screen-hidden" id="successScreen" aria-live="polite">
+        <div class="celebration-badge">
+          <span class="big-emoji">🥹❤️🎉</span>
+        </div>
+
+        <h2 class="success-heading">Yayyy! 🥹❤️</h2>
+        <p class="success-message">Thank you Moti! Ab smile karo 😊💕</p>
+
+        <!-- Sister's Official Peace Treaty Voucher -->
+        <div class="peace-voucher">
+          <div class="voucher-ribbon">VIP SISTER PASS 👑</div>
+          <div class="voucher-content">
+            <div class="voucher-icon">🍦✨</div>
+            <h3 class="voucher-title">Official Peace Treaty</h3>
+            <p class="voucher-desc">
+              Valid for <strong>1 Free Ice-Cream or Favorite Treat</strong> anytime you demand from Bhaiyoo. No questions asked!
+            </p>
+            <div class="voucher-footer">
+              <span>Status: <strong class="badge-active">Forgiven & Loved 💕</strong></span>
+              <span class="voucher-seal">SEALED WITH LOVE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- WhatsApp Notify Bhaiyoo Button (1-Click) -->
+        <div class="whatsapp-notify-box">
+          <a id="whatsappNotifyLink" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            <span class="wa-icon">💬</span>
+            <span>Bhaiyoo ko WhatsApp pe batao! 💕</span>
+          </a>
+        </div>
+
+        <!-- Success Actions -->
+        <div class="success-actions">
+          <button type="button" class="btn-sparkle" id="moreHeartsBtn">
+            <span>Send More Love 💖</span>
+          </button>
+          <button type="button" class="btn-text-link" id="readAgainBtn">
+            <span>Read letter again 💌</span>
+          </button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Soft footer note -->
+    <p class="page-footer-note">
+      Crafted with love for the best sister in the world 🌸
+    </p>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/confetti.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
