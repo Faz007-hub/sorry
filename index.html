@@ -1609,23 +1609,16 @@
           }).catch(err => console.warn('Formspree notification failed:', err));
         }
 
-        updateWhatsAppLink(actionName);
+        updateWhatsAppLink();
       }
 
-      function updateWhatsAppLink(action) {
+      function updateWhatsAppLink() {
         if (!whatsappNotifyLink) return;
-        let message = '';
-        if (action.includes('Maaf') || action.includes('forgive')) {
-          message = encodeURIComponent("Bhaiyoo maine maaf kia 😂 ice khilao ab 🍦😭❤️");
-        } else {
-          message = encodeURIComponent("Bhaiyoo maine abhi tak maaf nahi kiya 😤 Aur manao mujhe! 🙈");
-        }
-
+        const message = encodeURIComponent("Bhaiyoo maaf kia jao kia yaad rakho ge ab ice cream khilao 🍦😂❤️");
         const phone = NOTIFICATION_CONFIG.WHATSAPP_PHONE ? NOTIFICATION_CONFIG.WHATSAPP_PHONE.replace(/[^0-9]/g, '') : '';
-        const waUrl = phone 
+        const waUrl = phone
           ? `https://wa.me/${phone}?text=${message}`
           : `https://api.whatsapp.com/send?text=${message}`;
-
         whatsappNotifyLink.href = waUrl;
       }
 
@@ -1881,7 +1874,7 @@
         });
       }
 
-      updateWhatsAppLink('Maaf Kiya');
+      updateWhatsAppLink();
 
     })();
   </script>
